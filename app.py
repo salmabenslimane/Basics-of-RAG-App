@@ -27,7 +27,7 @@ def split_text_into_chunks(text, chunk_size=500, chunk_overlap=50):
 # 2. CREATING VECTOR STORE 
 
 def create_vector_store (chunks):
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") #for french usage
+    embeddings = HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl") #for french usage
     vector_store = FAISS.from_texts(chunks, embedding=embeddings)
     return vector_store
 
